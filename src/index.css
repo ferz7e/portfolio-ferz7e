@@ -1,49 +1,36 @@
 @font-face {
-  font-family: "Barlow";
-  src: url("/fonts/Barlow-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Barlow";
-  src: url("/fonts/Barlow-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Barlow-Condensed";
-  src: url("/fonts/BarlowCondensed-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Lamoric-Rowen";
   src: url("/fonts/LamoricRowenTTF.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   /* Base */
   --color-bg: #0b0b0c;
   --color-text-primary: #ededed;
   --color-text-secondary: rgba(237, 237, 237, 0.6);
 
-  /* Accent */
-  --color-accent: #c5a47e;
-
   /* Padding */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 32px;
   --space-4: 64px;
+  --space-5: 98px;
 
   /* Font sizes */
   --font-xs: 8px;
@@ -67,8 +54,8 @@ body {
   height: 100%;
   background-color: var(--color-bg);
   color: var(--color-text-primary);
-  font-family: "Barlow", sans-serif;
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
   font-size: var(--font-sm);
 }
 #root {
@@ -91,10 +78,8 @@ body {
   }
 }
 .highlight {
-  font-family: Lamoric-Rowen;
   color: var(--color-text-primary);
-  letter-spacing: 1px;
 }
-.highlight:hover {
-  color: var(--color-accent);
+.highlight__initial {
+  font-size: var(--font-md);
 }
