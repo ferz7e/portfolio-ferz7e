@@ -1,5 +1,6 @@
 import "./App.css";
 import MainBackground from "./components/MainBackground";
+import { GoArrowUpRight } from "react-icons/go";
 
 // Componente principal de la aplicación
 function App() {
@@ -18,6 +19,7 @@ function App() {
       {/* Main - Contenedor principal del contenido */}
       {/* ============================= */}
       <main className="main">
+        {/* Background */}
         <MainBackground />
         {/* ----------------------------- */}
         {/* Sección izquierda - Hero + About */}
@@ -50,12 +52,27 @@ function App() {
         {/* Sección derecha - Proyectos */}
         {/* ----------------------------- */}
         <div className="main__container--right">
+          {/* Proyecto 1 */}
           <div className="proyect">
-            <div className="proyect__container">
-              <p className="proyect__id">01.</p>
-              <h3 className="proyect__title">Unexo</h3>
+            <a className="proyect__a" href="https://www.unexoapp.com/" target="_blank" rel="noopener noreferrer">
+              <div className="proyect__container">
+                <p className="proyect__id">01.</p>
+                <h3 className="proyect__title">Unexo</h3>
+              </div>
+              <p className="proyect__subtitle">Enero 2026 · Fullstack Developer · Designer</p>
+            </a>
+            <div className="proyect__containerLinks">
+              <div className="proyect__containerLink">
+                <a
+                  className="proyect__link"
+                  href="https://github.com/FernandoAvZarate"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Github
+                </a>
+                <GoArrowUpRight />
+              </div>
             </div>
-            <p className="proyect__subtitle">Enero 2026 · Fullstack Developer · Designer</p>
           </div>
         </div>
       </main>
@@ -65,7 +82,11 @@ function App() {
       {/* ============================= */}
       <header className="header">
         <div className="header__navbar">
-          <a href="https://ejemplo.com" className="header__navbar--item" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/fernando.zarate.molina/"
+            className="header__navbar--item"
+            target="_blank"
+            rel="noopener noreferrer">
             Instagram
           </a>
           <a
@@ -75,10 +96,18 @@ function App() {
             rel="noopener noreferrer">
             Linkedin
           </a>
-          <a href="https://ejemplo.com" className="header__navbar--item" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/FernandoAvZarate"
+            className="header__navbar--item"
+            target="_blank"
+            rel="noopener noreferrer">
             Github
           </a>
-          <a href="https://ejemplo.com" className="header__navbar--item" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:zaratefernandoanibal@gmail.com"
+            className="header__navbar--item"
+            target="_blank"
+            rel="noopener noreferrer">
             Contacto
           </a>
         </div>
