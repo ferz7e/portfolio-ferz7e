@@ -1,4 +1,5 @@
 import "./App.css";
+import MainBackground from "./components/MainBackground";
 
 // Componente principal de la aplicación
 function App() {
@@ -17,6 +18,7 @@ function App() {
       {/* Main - Contenedor principal del contenido */}
       {/* ============================= */}
       <main className="main">
+        <MainBackground />
         {/* ----------------------------- */}
         {/* Sección izquierda - Hero + About */}
         {/* ----------------------------- */}

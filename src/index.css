@@ -76,11 +76,11 @@ body {
 /* Contenedor raíz (#root)       */
 /* ============================= */
 #root {
+  height: 100vh; /* Ocupa toda la altura de la ventana */
   padding: var(--space-2);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la ventana */
 }
 
 /* ============================= */
