@@ -34,7 +34,7 @@ const Loader = () => {
         <h1 className="loader__container--name">
           <span className="loader__name--initial">F</span>ernando <span className="loader__name--initial">Z</span>árate
         </h1>
-        <p className="loader__container--subtitle">Developer & Designer</p>
+        <p className="loader__container--subtitle">Frontend Developer</p>
       </div>
     </div>
   );

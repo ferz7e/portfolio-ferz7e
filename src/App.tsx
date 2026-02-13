@@ -32,7 +32,7 @@ function App() {
             <h1 className="name">
               <span className="name__initial">F</span>ernando <span className="name__initial">Z</span>árate
             </h1>
-            <h2 className="subtitle">Developer & Designer</h2>
+            <h2 className="subtitle">Frontend Developer</h2>
           </div>
 
           {/* About - Descripción personal y profesional */}
@@ -61,7 +61,7 @@ function App() {
                 <p className="proyect__id">01.</p>
                 <h3 className="proyect__title">Unexo</h3>
               </div>
-              <p className="proyect__subtitle">Enero 2026 · Fullstack Developer · Designer</p>
+              <p className="proyect__subtitle">Aplicación Web · Enero 2026 · Fullstack Developer · Designer</p>
             </a>
             <div className="proyect__containerLinks">
               <div className="proyect__containerLink">

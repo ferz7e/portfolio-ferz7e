@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# ¡Hola! Soy Fernando Zárate 👋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Frontend Developer
 
-Currently, two official plugins are available:
+Desarrollador Frontend enfocado en construir aplicaciones web con **React, Next.js, TypeScript y Tailwind CSS**. Mi prioridad es el equilibrio entre un código bien estructurado y una experiencia de usuario memorable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Combinando mi formación en diseño y mi lógica como desarrollador, busco que cada producto digital sea tan funcional como estético.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🚀 Sobre mí
 
-## Expanding the ESLint configuration
+📍 **San Juan, Argentina.**
+Diseñador, desarrollador y músico. Para mí, un acorde, un trazo o una línea de código representan lo mismo: **el impulso de materializar lo que antes no existía.**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> "Persigo el equilibrio entre rigor y estética. Me enfoco en crear interfaces simples y memorables, priorizando la usabilidad y la eficiencia."
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🛠️ Mi Stack Tecnológico
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Frontend               | Backend           | Herramientas        |
+| :--------------------- | :---------------- | :------------------ |
+| ⚛️ **React / Next.js** | 🟢 **Node.js**    | 🎨 **Figma**        |
+| 🎨 **Tailwind CSS**    | 🛡️ **Express**    | 🐙 **Git / GitHub** |
+| 🟦 **TypeScript**      | 🐘 **PostgreSQL** | 🐳 **Docker**       |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📁 Proyectos Destacados
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### 🎓 [Unexo](https://www.unexoapp.com)
+
+_Solución integral para estudiantes de la Universidad Nacional de San Juan (UNSJ)._
+
+- **Propósito:** Democratizar el acceso al material de estudio y eliminar la fragmentación de información.
+- **Solución:** Centraliza apuntes y recursos en un entorno gratuito y abierto, fomentando el aprendizaje colaborativo.
+- **Tech Stack:** `React` • `Tailwind CSS` • `Chakra UI` • `Node.js` • `Express.js` • `PostgreSQL` • `Prisma ORM`
+
+👉 [**Ver Demo en Vivo**](https://www.unexoapp.com) | [**Ver Código**](https://github.com/ferz7e/unexo-showcase)
+
+---
+
+### 📫 ¡Conectemos!
+
+¿Tienes una idea en mente o simplemente quieres saludar? Estaré encantado de charlar.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ferz7e/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FerZ7e)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zaratefernandoanibal@gmail.com)
+
+---
+
+_Hecho con ❤️ y mucha 🎶 desde San Juan, Argentina._
