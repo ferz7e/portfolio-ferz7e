@@ -10,11 +10,7 @@ function App() {
       <Loader />
       <header className="header">
         <div className="header__navbar">
-          <a
-            href="https://www.instagram.com/ferz7e"
-            className="header__navbar--item"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="/fernandozarate_cv_fd.pdf" download="Fernando_Zarate_CV.pdf" className="header__navbar--item">
             Curriculum
           </a>
           <a
@@ -61,12 +57,12 @@ function App() {
           {/* About - Descripción personal y profesional */}
           <div className="about">
             <p className="about__p">
-              Hola, soy Fernando. Desarrollo interfaces limpias y usables, optimizo rendimiento y creo lógica eficiente
-              para productos sólidos y confiables.
+              Hola, soy Fernando. Desarrollo interfaces limpias y de alto rendimiento, aplicando lógica eficiente para
+              construir productos digitales sólidos.
             </p>
             <p className="about__p">
-              Cuando no programo, me encontrarás tocando guitarra, viajando o diseñando ideas nuevas para explorar
-              creatividad y diseño.{" "}
+              Fuera del código, toco guitarra, viajo y diseño nuevas ideas. Siempre busco explorar la creatividad para
+              expandir mis horizontes personales.
             </p>
           </div>
         </div>

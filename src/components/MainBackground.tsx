@@ -159,41 +159,37 @@ export default function BeachParticleBackground() {
     // ================= FRAGMENT SHADER =================
     // Controla el color y la transparencia de cada pixel/punto
     const fragmentShader = `
-      precision highp float;
-      varying vec2 vUv;
-      varying float vBrightness;
-      varying float vType;
+  precision highp float;
+  varying vec2 vUv;
+  varying float vBrightness;
+  varying float vType;
 
-      void main() {
-        // Convierte el cuadrado del punto en un círculo
-        float r = distance(gl_PointCoord, vec2(0.5));
-        if (r > 0.5) discard;
+  void main() {
+    float r = distance(gl_PointCoord, vec2(0.5));
+    if (r > 0.5) discard;
 
-        // Nuevos colores basados en tu paleta: #e6e7e8
-        vec3 primaryColor = vec3(0.902, 0.906, 0.910); 
-        vec3 secondaryColor = vec3(0.902, 0.906, 0.910); 
-        
-        vec3 finalColor = mix(primaryColor, secondaryColor, vType);
-        
-        // Añade brillo cuando pasa una onda
-        finalColor += vBrightness * 0.35;
+    // Nuevos colores
+    vec3 primaryColor = vec3(0.941, 0.965, 0.988); 
+    vec3 secondaryColor = vec3(0.545, 0.580, 0.620); 
+    
+    vec3 finalColor = mix(primaryColor, secondaryColor, vType);
+    
+    finalColor += vBrightness * 0.35;
 
-        // DIFUMINADO DE BORDES: Viñeteado suave
-        float edgeX = smoothstep(0.0, 0.4, vUv.x) * smoothstep(1.0, 0.6, vUv.x);
-        float edgeY = smoothstep(0.0, 0.4, vUv.y) * smoothstep(1.0, 0.6, vUv.y);
-        float visibility = edgeX * edgeY;
-        
-        // Aplicamos el alpha de 0.6 para el color secundario (vType > 0.5)
-        float typeAlpha = vType > 0.5 ? 0.6 : 1.0;
-        
-        float alpha = (1.0 - smoothstep(0.0, 0.5, r)) // Suaviza el círculo
-          * (0.15 + vBrightness * 0.85) // Más opaco si hay brillo
-          * visibility
-          * typeAlpha;
-        
-        gl_FragColor = vec4(finalColor, alpha);
-      }
-    `;
+    float edgeX = smoothstep(0.0, 0.4, vUv.x) * smoothstep(1.0, 0.6, vUv.x);
+    float edgeY = smoothstep(0.0, 0.4, vUv.y) * smoothstep(1.0, 0.6, vUv.y);
+    float visibility = edgeX * edgeY;
+    
+    float typeAlpha = vType > 0.5 ? 0.6 : 1.0;
+    
+    float alpha = (1.0 - smoothstep(0.0, 0.5, r))
+      * (0.15 + vBrightness * 0.85)
+      * visibility
+      * typeAlpha;
+    
+    gl_FragColor = vec4(finalColor, alpha);
+  }
+`;
 
     // --- UNIFORMS (Variables enviadas a la GPU) ---
     const uniforms = {
