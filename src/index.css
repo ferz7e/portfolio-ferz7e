@@ -3,13 +3,6 @@
 /* ============================= */
 
 @font-face {
-  font-family: "Lamoric-Rowen";
-  src: url("/fonts/LamoricRowenTTF.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; /* Swap: muestra texto con fallback mientras carga la fuente */
-}
-@font-face {
   font-family: "Poppins";
   src: url("/fonts/Poppins-Light.woff2") format("woff2");
   font-weight: 300;
@@ -30,10 +23,10 @@
 
 :root {
   /* Colores base */
-  --color-bg: #0f172a;
-  --color-text-primary: #e2e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-accent: #5eead4;
+  --color-bg: #0b151b;
+  --color-text-primary: #e6e7e8;
+  --color-text-secondary: rgba(230, 231, 232, 0.6);
+  --color-accent: #00f0ff;
 
   /* Espaciados (padding/margin) */
   --space-1: 8px;
@@ -43,6 +36,7 @@
   --space-5: 96px;
 
   /* Tamaños de fuente */
+  --font-2xs: 6px;
   --font-xs: 8px;
   --font-sm: 12px;
   --font-md: 16px;
@@ -91,6 +85,24 @@ body {
 }
 
 /* ============================= */
+/* Main Background           */
+/* ============================= */
+.mainBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* No bloquea clics en elementos debajo */
+  overflow: hidden;
+  background: transparent;
+  opacity: 0.2;
+  border-radius: 16px;
+  box-shadow: 0 0 4px 1px var(--color-text-primary);
+}
+
+/* ============================= */
 /* Responsivo - Tablet           */
 /* ============================= */
 
@@ -98,6 +110,9 @@ body {
   #root {
     padding-inline: var(--space-1);
     padding-block: var(--space-2);
+  }
+  .mainBackground {
+    border-radius: 12px;
   }
 }
 
@@ -109,5 +124,8 @@ body {
   #root {
     padding-inline: 0px;
     padding-block: var(--space-2);
+  }
+  .mainBackground {
+    border-radius: 8px;
   }
 }
