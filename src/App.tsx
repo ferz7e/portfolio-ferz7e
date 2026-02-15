@@ -38,8 +38,7 @@ function App() {
           {/* About - Descripción personal y profesional */}
           <div className="about">
             <p className="about__p">
-              <span className="highlight__initial">O</span>riginario de San Juan, Argentina, soy diseñador,
-              desarrollador y músico. Para mí, un acorde, un trazo o una línea de código representan lo mismo: un
+              <span className="highlight__initial">O</span>riginario de San Juan, Argentina, soy programador y músico. Para mí, un acorde o una línea de código representan lo mismo: un
               impulso de <span className="highlight">materializar</span> lo que antes no existía.
             </p>
             <p className="about__p">
@@ -61,7 +60,7 @@ function App() {
                 <p className="proyect__id">01.</p>
                 <h3 className="proyect__title">Unexo</h3>
               </div>
-              <p className="proyect__subtitle">Aplicación Web · Enero 2026 · Fullstack Developer · Designer</p>
+              <p className="proyect__subtitle">Aplicación Web · Enero 2026 · Fullstack Developer</p>
             </a>
             <div className="proyect__containerLinks">
               <div className="proyect__containerLink">

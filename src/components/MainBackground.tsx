@@ -199,34 +199,38 @@ export default function BeachParticleBackground() {
 
     // ================= FRAGMENT SHADER =================
     const fragmentShader = `
-      precision highp float;
+  precision highp float;
 
-      varying vec2 vUv;
-      varying float vBrightness;
-      varying float vType;
+  varying vec2 vUv;
+  varying float vBrightness;
+  varying float vType;
 
-      void main() {
-        float r = distance(gl_PointCoord, vec2(0.5));
-        if (r > 0.5) discard;
+  void main() {
+    float r = distance(gl_PointCoord, vec2(0.5));
+    if (r > 0.5) discard;
 
-        vec3 primaryColor = vec3(0.93, 0.93, 0.93);
-        vec3 noirColor = vec3(0.2, 0.2, 0.2); 
-        
-        vec3 finalColor = mix(primaryColor, noirColor, vType);
+    // Colores de la paleta
+    vec3 primaryColor = vec3(0.8863, 0.9098, 0.9412);   // #e2e8f0
+    vec3 secondaryColor = vec3(0.5804, 0.6392, 0.7216); // #94a3b8
 
-        finalColor += vBrightness * 0.35 * (1.0 - vType * 0.5);
+    // Mezcla según el tipo
+    vec3 finalColor = mix(primaryColor, secondaryColor, vType);
 
-        float visibility = 1.0 - smoothstep(0.1, 0.9, vUv.x);
-        float typeAlpha = vType > 0.5 ? 0.6 : 1.0;
+    // Ajuste de brillo
+    finalColor += vBrightness * 0.35 * (1.0 - vType * 0.5);
 
-        float alpha = (1.0 - smoothstep(0.0, 0.5, r))
-          * (0.15 + vBrightness * 0.85)
-          * visibility
-          * typeAlpha;
-        
-        gl_FragColor = vec4(finalColor, alpha);
-      }
-    `;
+    // Control de visibilidad y alpha
+    float visibility = 1.0 - smoothstep(0.1, 0.9, vUv.x);
+    float typeAlpha = vType > 0.5 ? 0.6 : 1.0;
+
+    float alpha = (1.0 - smoothstep(0.0, 0.5, r))
+      * (0.15 + vBrightness * 0.85)
+      * visibility
+      * typeAlpha;
+
+    gl_FragColor = vec4(finalColor, alpha);
+  }
+`;
 
     // Uniforms compartidos entre JS y shaders
     const uniforms = {
@@ -272,7 +276,7 @@ export default function BeachParticleBackground() {
       autoIdx = (autoIdx + 1) % 5;
     };
 
-    const autoWaveInterval = setInterval(triggerAutoWave, 4000);
+    const autoWaveInterval = setInterval(triggerAutoWave, 8000);
 
     // Maneja clicks del usuario
     const handleClick = (e: MouseEvent) => {
@@ -325,6 +329,7 @@ export default function BeachParticleBackground() {
         overflow: "hidden",
         background: "transparent",
         opacity: "0.7",
+        borderRadius: "20px",
       }}
     />
   );

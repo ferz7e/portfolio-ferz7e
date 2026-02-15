@@ -30,10 +30,10 @@
 
 :root {
   /* Colores base */
-  --color-bg: #0b0b0c;
-  --color-text-primary: #ededed;
-  --color-text-secondary: rgba(237, 237, 237, 0.6);
-  --color-accent: #bc002d;
+  --color-bg: #0f172a;
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-accent: #5eead4;
 
   /* Espaciados (padding/margin) */
   --space-1: 8px;

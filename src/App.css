@@ -15,7 +15,7 @@
 .footer {
   display: flex;
   justify-content: center; /* centra contenido horizontalmente */
-  align-items: flex-end; /* alinea contenido al fondo */
+  align-items: center; /* alinea contenido al fondo */
   height: 100dvh; /* ocupa toda la altura de la ventana */
 }
 
@@ -32,8 +32,7 @@
   transform-origin: center center; /* rotación desde el centro */
   white-space: nowrap; /* evita salto de línea */
   position: absolute;
-  bottom: 112px; /* posición desde la base del wrapper */
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
 }
 
 /* ============================= */
