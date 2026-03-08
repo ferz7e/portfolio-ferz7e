@@ -10,7 +10,7 @@ function App() {
       <Loader />
       <header className="header">
         <div className="header__navbar">
-          <a href="/fernandozarate_cv_fd.pdf" download="Fernando_Zarate_CV.pdf" className="header__navbar--item">
+          <a href="/software_dev_fernandozarate.pdf" download="Fernando_Zarate_CV.pdf" className="header__navbar--item">
             Curriculum
           </a>
           <a
@@ -51,19 +51,36 @@ function App() {
             <h1 className="name">
               <span className="name__initial">F</span>ernando <span className="name__initial">Z</span>árate
             </h1>
-            <h2 className="subtitle">Frontend Developer</h2>
+            <h2 className="subtitle">Software Developer</h2>
           </div>
 
-          {/* About - Descripción personal y profesional */}
+          {/* About - Descripción personal y cprofesional */}
           <div className="about">
             <p className="about__p">
-              Hola, soy Fernando. Desarrollo interfaces limpias y de alto rendimiento, aplicando lógica eficiente para
-              construir productos digitales sólidos.
+              Soy Fernando Zárate, Software Developer especializado en desarrollo web, software a medida e inteligencia
+              artificial. Ayudo a empresas y emprendedores a transformar sus ideas en soluciones digitales modernas y
+              eficientes, desarrollando sitios web, aplicaciones y sistemas personalizados, además de implementar
+              automatizaciones con IA que optimizan procesos y aumentan la productividad.
             </p>
-            <p className="about__p">
-              Fuera del código, toco guitarra, viajo y diseño nuevas ideas. Siempre busco explorar la creatividad para
-              expandir mis horizontes personales.
-            </p>
+          </div>
+          {/* Stats - Estadisticas */}
+          <div className="stats">
+            <div className="stat">
+              <span className="stat__title">Webs</span>
+              <span className="stat__number">+6</span>
+            </div>
+            <div className="stat">
+              <span className="stat__title">Clientes</span>
+              <span className="stat__number">+3</span>
+            </div>
+            <div className="stat">
+              <span className="stat__title">Software</span>
+              <span className="stat__number">+1</span>
+            </div>
+            <div className="stat">
+              <span className="stat__title">Automatizaciones</span>
+              <span className="stat__number">+3</span>
+            </div>
           </div>
         </div>
 
@@ -83,7 +100,7 @@ function App() {
               <h3 className="proyect__title">Unexo</h3>
             </div>
             {/* subtitulo */}
-            <p className="proyect__subtitle">Aplicación Web · Enero 2026 · Fullstack Developer</p>
+            <p className="proyect__subtitle">Aplicación Web · Enero 2026</p>
             {/* contenedor de stack */}
             <div className="proyect__container--stack">
               <div className="proyect__stack--item">TypeScript</div>
@@ -102,6 +119,35 @@ function App() {
                 href="https://github.com/ferz7e/unexo-showcase"
                 target="_blank"
                 rel="noopener noreferrer">
+                Github
+                <span>
+                  <GoArrowUpRight />
+                </span>
+              </a>
+            </div>
+          </a>
+          {/* Proyecto 2 */}
+          <a
+            className="proyect card card__hover"
+            href="https://erco-website.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            {/* contenedor de title */}
+            <div className="proyect__container--title">
+              <p className="proyect__id">02 - I .</p>
+              <h3 className="proyect__title">Erco </h3>
+            </div>
+            {/* subtitulo */}
+            <p className="proyect__subtitle">Web site · Marzo 2026</p>
+            {/* contenedor de stack */}
+            <div className="proyect__container--stack">
+              <div className="proyect__stack--item">TypeScript</div>
+              <div className="proyect__stack--item">Tailwind</div>
+              <div className="proyect__stack--item">React</div>
+            </div>
+            {/* contenedor de links */}
+            <div className="proyect__container--links">
+              <a className="proyect__link" href="/" target="_blank" rel="noopener noreferrer">
                 Github
                 <span>
                   <GoArrowUpRight />
