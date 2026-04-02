@@ -132,6 +132,7 @@ function App() {
             </div>
           </a>
           {/* Proyecto 2 */}
+          {/* 2.1 */}
           <a
             className="proyect card card__hover"
             href="https://erco-website.vercel.app/"
@@ -139,7 +140,7 @@ function App() {
             rel="noopener noreferrer">
             {/* contenedor de title */}
             <div className="proyect__container--title">
-              <p className="proyect__id">02 - I .</p>
+              <p className="proyect__id">02-I.</p>
               <h3 className="proyect__title">Erco </h3>
             </div>
             {/* subtitulo */}
@@ -149,6 +150,35 @@ function App() {
               <div className="proyect__stack--item">TypeScript</div>
               <div className="proyect__stack--item">Tailwind</div>
               <div className="proyect__stack--item">React</div>
+            </div>
+            {/* contenedor de links */}
+            <div className="proyect__container--links">
+              <a className="proyect__link" href="/" target="_blank" rel="noopener noreferrer">
+                Github
+                <span>
+                  <GoArrowUpRight />
+                </span>
+              </a>
+            </div>
+          </a>
+          {/* 2.2 */}
+          <a className="proyect card card__hover" href="/" target="_blank" rel="noopener noreferrer">
+            {/* contenedor de title */}
+            <div className="proyect__container--title">
+              <p className="proyect__id">02-II.</p>
+              <h3 className="proyect__title">Erco </h3>
+            </div>
+            {/* subtitulo */}
+            <p className="proyect__subtitle">Sistema de gestión interno + Capa externa para clientes · Abril 2026</p>
+            {/* contenedor de stack */}
+            <div className="proyect__container--stack">
+              <div className="proyect__stack--item">TypeScript</div>
+              <div className="proyect__stack--item">Tailwind</div>
+              <div className="proyect__stack--item">React</div>
+              <div className="proyect__stack--item">Node.js</div>
+              <div className="proyect__stack--item">Nest.js</div>
+              <div className="proyect__stack--item">PrismaORM</div>
+              <div className="proyect__stack--item">PostgreSQL</div>
             </div>
             {/* contenedor de links */}
             <div className="proyect__container--links">
