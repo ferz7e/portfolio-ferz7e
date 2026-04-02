@@ -58,13 +58,18 @@ function App() {
           <div className="about">
             <p className="about__p">
               Soy Fernando Zárate, Software Developer especializado en desarrollo web, software a medida e inteligencia
-              artificial. Ayudo a empresas y emprendedores a transformar sus ideas en soluciones digitales modernas y
-              eficientes, desarrollando sitios web, aplicaciones y sistemas personalizados, además de implementar
-              automatizaciones con IA que optimizan procesos y aumentan la productividad.
+              artificial.
+            </p>
+            <p className="about__p">
+              Ayudo a empresas y emprendedores a convertir ideas en productos digitales modernos, claros y escalables.
+            </p>
+            <p className="about__p">
+              Desarrollo sitios web, aplicaciones y sistemas personalizados, e implemento automatizaciones con IA para
+              optimizar procesos y aumentar la productividad de los negocios de mis clientes.
             </p>
           </div>
           {/* Stats - Estadisticas */}
-          <div className="stats">
+          {/* <div className="stats">
             <div className="stat">
               <span className="stat__title">Webs</span>
               <span className="stat__number">+6</span>
@@ -81,7 +86,7 @@ function App() {
               <span className="stat__title">Automatizaciones</span>
               <span className="stat__number">+3</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* ----------------------------- */}
