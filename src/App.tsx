@@ -1,13 +1,23 @@
+import { useState } from "react";
 import "./App.css";
 import MainBackground from "./components/MainBackground";
 import Loader from "./components/Loader";
-import { GoArrowUpRight } from "react-icons/go";
+import ProjectCard from "./components/ProjectCard";
+import ProjectModal from "./components/ProjectModal";
+import { projects } from "./data/projects";
+import type { Project } from "./types/project";
 
-// Componente principal de la aplicación
+/**
+ * Componente raíz de la interfaz pública del portfolio.
+ * Gestiona la estructura general y el estado del modal de proyectos.
+ */
 function App() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <div className="layout">
       <Loader />
+
       <header className="header">
         <div className="header__navbar">
           <a href="/software_dev_fernandozarate.pdf" download="Fernando_Zarate_CV.pdf" className="header__navbar--item">
@@ -36,17 +46,11 @@ function App() {
           </a>
         </div>
       </header>
-      {/* ============================= */}
-      {/* Main - Contenedor principal del contenido */}
-      {/* ============================= */}
+
       <main className="main">
-        {/* Background */}
         <MainBackground />
-        {/* ----------------------------- */}
-        {/* Sección izquierda - Hero + About */}
-        {/* ----------------------------- */}
+
         <div className="main__container--left">
-          {/* Hero - Nombre y subtítulo */}
           <div className="hero">
             <h1 className="name">
               <span className="name__initial">F</span>ernando <span className="name__initial">Z</span>árate
@@ -54,7 +58,6 @@ function App() {
             <h2 className="subtitle">Software Developer</h2>
           </div>
 
-          {/* About - Descripción personal y cprofesional */}
           <div className="about">
             <p className="about__p">
               Soy Fernando Zárate, Software Developer especializado en desarrollo web, software a medida e inteligencia
@@ -68,142 +71,26 @@ function App() {
               optimizar procesos y aumentar la productividad de los negocios de mis clientes.
             </p>
           </div>
-          {/* Stats - Estadisticas */}
-          {/* <div className="stats">
-            <div className="stat">
-              <span className="stat__title">Webs</span>
-              <span className="stat__number">+6</span>
-            </div>
-            <div className="stat">
-              <span className="stat__title">Clientes</span>
-              <span className="stat__number">+3</span>
-            </div>
-            <div className="stat">
-              <span className="stat__title">Software</span>
-              <span className="stat__number">+1</span>
-            </div>
-            <div className="stat">
-              <span className="stat__title">Automatizaciones</span>
-              <span className="stat__number">+3</span>
-            </div>
-          </div> */}
         </div>
 
-        {/* ----------------------------- */}
-        {/* Sección derecha - Proyectos */}
-        {/* ----------------------------- */}
         <div className="main__container--right">
-          {/* Proyecto 1 */}
-          <a
-            className="proyect card card__hover"
-            href="https://www.unexoapp.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            {/* contenedor de title */}
-            <div className="proyect__container--title">
-              <p className="proyect__id">01.</p>
-              <h3 className="proyect__title">Unexo</h3>
-            </div>
-            {/* subtitulo */}
-            <p className="proyect__subtitle">Aplicación Web · Enero 2026</p>
-            {/* contenedor de stack */}
-            <div className="proyect__container--stack">
-              <div className="proyect__stack--item">TypeScript</div>
-              <div className="proyect__stack--item">Tailwind</div>
-              <div className="proyect__stack--item">React</div>
-              <div className="proyect__stack--item">ChakraUI</div>
-              <div className="proyect__stack--item">Node.js</div>
-              <div className="proyect__stack--item">Express</div>
-              <div className="proyect__stack--item">PrismaORM</div>
-              <div className="proyect__stack--item">PostgreSQL</div>
-            </div>
-            {/* contenedor de links */}
-            <div className="proyect__container--links">
-              <a
-                className="proyect__link"
-                href="https://github.com/ferz7e/unexo-showcase"
-                target="_blank"
-                rel="noopener noreferrer">
-                Github
-                <span>
-                  <GoArrowUpRight />
-                </span>
-              </a>
-            </div>
-          </a>
-          {/* Proyecto 2 */}
-          {/* 2.1 */}
-          <a
-            className="proyect card card__hover"
-            href="https://erco-website.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer">
-            {/* contenedor de title */}
-            <div className="proyect__container--title">
-              <p className="proyect__id">02-I.</p>
-              <h3 className="proyect__title">Erco </h3>
-            </div>
-            {/* subtitulo */}
-            <p className="proyect__subtitle">Web site · Marzo 2026</p>
-            {/* contenedor de stack */}
-            <div className="proyect__container--stack">
-              <div className="proyect__stack--item">TypeScript</div>
-              <div className="proyect__stack--item">Tailwind</div>
-              <div className="proyect__stack--item">React</div>
-            </div>
-            {/* contenedor de links */}
-            <div className="proyect__container--links">
-              <a className="proyect__link" href="/" target="_blank" rel="noopener noreferrer">
-                Github
-                <span>
-                  <GoArrowUpRight />
-                </span>
-              </a>
-            </div>
-          </a>
-          {/* 2.2 */}
-          <a className="proyect card card__hover" href="/" target="_blank" rel="noopener noreferrer">
-            {/* contenedor de title */}
-            <div className="proyect__container--title">
-              <p className="proyect__id">02-II.</p>
-              <h3 className="proyect__title">Erco </h3>
-            </div>
-            {/* subtitulo */}
-            <p className="proyect__subtitle">Sistema de gestión interno + Capa externa para clientes · Abril 2026</p>
-            {/* contenedor de stack */}
-            <div className="proyect__container--stack">
-              <div className="proyect__stack--item">TypeScript</div>
-              <div className="proyect__stack--item">Tailwind</div>
-              <div className="proyect__stack--item">React</div>
-              <div className="proyect__stack--item">Node.js</div>
-              <div className="proyect__stack--item">Nest.js</div>
-              <div className="proyect__stack--item">PrismaORM</div>
-              <div className="proyect__stack--item">PostgreSQL</div>
-            </div>
-            {/* contenedor de links */}
-            <div className="proyect__container--links">
-              <a className="proyect__link" href="/" target="_blank" rel="noopener noreferrer">
-                Github
-                <span>
-                  <GoArrowUpRight />
-                </span>
-              </a>
-            </div>
-          </a>
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} onOpenModal={setSelectedProject} />
+          ))}
         </div>
       </main>
-      {/* ============================= */}
-      {/* Footer - información de autor */}
-      {/* ============================= */}
+
+      <ProjectModal
+        isOpen={selectedProject !== null}
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+
       <footer className="footer">
         <div className="footer__wrapper">
           <p className="footer__p">&copy; Fernando Zárate</p>
         </div>
       </footer>
-
-      {/* ============================= */}
-      {/* Header - Barra de navegación */}
-      {/* ============================= */}
     </div>
   );
 }

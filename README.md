@@ -1,54 +1,40 @@
-# ¡Hola! Soy Fernando Zárate 👋
+# Portfolio de Fernando Zárate
 
-## Frontend Developer
+Aplicación web de portfolio personal construida con React + TypeScript + Vite.
 
-Desarrollador Frontend enfocado en construir aplicaciones web con **React, Next.js, TypeScript y Tailwind CSS**. Mi prioridad es el equilibrio entre un código bien estructurado y una experiencia de usuario memorable.
+## Stack
+- React 19
+- TypeScript
+- Vite
+- Three.js (fondo de partículas)
+- CSS modular por archivo (`index.css` + `App.css`)
 
-Combinando mi formación en diseño y mi lógica como desarrollador, busco que cada producto digital sea tan funcional como estético.
+## Scripts
+- `npm run dev`: entorno local
+- `npm run build`: compilación de producción
+- `npm run preview`: previsualización del build
+- `npm run lint`: validación estática de código
 
----
+## Estructura principal
+```txt
+src/
+  components/
+  data/
+  types/
+  App.tsx
+  App.css
+  index.css
+  main.tsx
+md/
+  architecture.md
+```
 
-### 🚀 Sobre mí
+## Documentación técnica
+- Arquitectura y responsabilidades: [md/architecture.md](./md/architecture.md)
+- Reglas internas de colaboración IA: [md/rules_ia.md](./md/rules_ia.md)
 
-📍 **San Juan, Argentina.**
-Diseñador, desarrollador y músico. Para mí, un acorde, un trazo o una línea de código representan lo mismo: **el impulso de materializar lo que antes no existía.**
-
-> "Persigo el equilibrio entre rigor y estética. Me enfoco en crear interfaces simples y memorables, priorizando la usabilidad y la eficiencia."
-
----
-
-### 🛠️ Mi Stack Tecnológico
-
-| Frontend               | Backend           | Herramientas        |
-| :--------------------- | :---------------- | :------------------ |
-| ⚛️ **React / Next.js** | 🟢 **Node.js**    | 🎨 **Figma**        |
-| 🎨 **Tailwind CSS**    | 🛡️ **Express**    | 🐙 **Git / GitHub** |
-| 🟦 **TypeScript**      | 🐘 **PostgreSQL** | 🐳 **Docker**       |
-
----
-
-### 📁 Proyectos Destacados
-
-#### 🎓 [Unexo](https://www.unexoapp.com)
-
-_Solución integral para estudiantes de la Universidad Nacional de San Juan (UNSJ)._
-
-- **Propósito:** Democratizar el acceso al material de estudio y eliminar la fragmentación de información.
-- **Solución:** Centraliza apuntes y recursos en un entorno gratuito y abierto, fomentando el aprendizaje colaborativo.
-- **Tech Stack:** `React` • `Tailwind CSS` • `Chakra UI` • `Node.js` • `Express.js` • `PostgreSQL` • `Prisma ORM`
-
-👉 [**Ver Demo en Vivo**](https://www.unexoapp.com) | [**Ver Código**](https://github.com/ferz7e/unexo-showcase)
-
----
-
-### 📫 ¡Conectemos!
-
-¿Tienes una idea en mente o simplemente quieres saludar? Estaré encantado de charlar.
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ferz7e/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FerZ7e)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zaratefernandoanibal@gmail.com)
-
----
-
-_Hecho con ❤️ y mucha 🎶 desde San Juan, Argentina._
+## Notas de diseño y consistencia
+- El contenido de proyectos vive en `src/data/projects.ts`.
+- El tipo compartido de proyecto vive en `src/types/project.ts`.
+- Cards y modal reutilizan estilos de enlaces y stack para mantener identidad visual consistente.
+- Los efectos visuales "glass" usan tokens globales definidos en `src/index.css`.

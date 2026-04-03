@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 
+/**
+ * Splash inicial del portfolio.
+ * Bloquea scroll temporalmente para asegurar una transición de entrada limpia.
+ */
 const Loader = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [fadeOut, setFadeOut] = useState<boolean>(false);

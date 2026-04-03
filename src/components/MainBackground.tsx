@@ -1,7 +1,11 @@
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
 
-export default function BeachParticleBackground() {
+/**
+ * Fondo animado de partículas (WebGL).
+ * Se monta como capa visual no interactiva detrás del contenido principal.
+ */
+export default function MainBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

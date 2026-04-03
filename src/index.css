@@ -26,6 +26,9 @@
   --color-text-primary: #f0f6fc;
   --color-text-secondary: #8b949e;
   --color-bg-btn: rgba(240, 246, 252, 0.2);
+  --color-glass-surface: rgba(255, 255, 255, 0.05);
+  --effect-glass-blur: 12px;
+  --effect-glass-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 
   /* Espaciados (padding/margin) */
   --space-1: 8px;
