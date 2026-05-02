@@ -13,6 +13,10 @@ interface ProjectCardProps {
  * - Click en enlaces internos: navega sin abrir modal
  */
 function ProjectCard({ project, onOpenModal }: ProjectCardProps) {
+  const stopPropagation = (event: MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
+
   const handleCardClick = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as Element;
 
@@ -31,60 +35,61 @@ function ProjectCard({ project, onOpenModal }: ProjectCardProps) {
 
   return (
     <article
-      className="proyect"
+      className="project-card"
       role="button"
       tabIndex={0}
+      aria-label={`Abrir detalle del proyecto ${project.title}`}
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}>
-      <div className="proyect__header">
+      <div className="project-card__header">
         {project.websiteUrl ? (
           <a
-            className="proyect__visit"
+            className="project-card__visit"
             href={project.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Abrir sitio web de ${project.title}`}
-            onClick={(event) => event.stopPropagation()}>
+            onClick={stopPropagation}>
             <GoArrowUpRight />
           </a>
         ) : (
-          <span className="proyect__visit proyect__visit--disabled" aria-disabled="true" title="Demo privada">
+          <span className="project-card__visit project-card__visit--disabled" aria-disabled="true" title="Demo privada">
             <GoArrowUpRight />
           </span>
         )}
 
-        <div className="proyect__container--title">
-          <p className="proyect__id">{project.id}</p>
-          <h3 className="proyect__title">{project.title}</h3>
+        <div className="project-card__title-group">
+          <p className="project-card__id">{project.id}</p>
+          <h3 className="project-card__title">{project.title}</h3>
         </div>
       </div>
 
-      <p className="proyect__subtitle">{project.subtitle}</p>
+      <p className="project-card__subtitle">{project.subtitle}</p>
 
-      <div className="proyect__container--stack">
+      <div className="project-card__stack">
         {project.stack.map((stackItem) => (
-          <div key={stackItem} className="proyect__stack--item">
+          <span key={stackItem} className="project-tag">
             {stackItem}
-          </div>
+          </span>
         ))}
       </div>
 
-      <div className="proyect__container--links">
+      <div className="project-card__links">
         {project.githubUrl ? (
           <a
-            className="proyect__link"
+            className="project-link"
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(event) => event.stopPropagation()}>
-            Github
+            onClick={stopPropagation}>
+            GitHub
             <span>
               <GoArrowUpRight />
             </span>
           </a>
         ) : (
-          <span className="proyect__link proyect__link--disabled" aria-disabled="true">
-            Github
+          <span className="project-link project-link--disabled" aria-disabled="true">
+            GitHub
             <span>
               <GoArrowUpRight />
             </span>
@@ -92,7 +97,7 @@ function ProjectCard({ project, onOpenModal }: ProjectCardProps) {
         )}
       </div>
 
-      {project.githubPrivacyNote ? <p className="proyect__privacy-note">{project.githubPrivacyNote}</p> : null}
+      {project.githubPrivacyNote ? <p className="project-card__privacy-note">{project.githubPrivacyNote}</p> : null}
     </article>
   );
 }

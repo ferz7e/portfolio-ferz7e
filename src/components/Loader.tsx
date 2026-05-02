@@ -1,32 +1,34 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const LOADER_FADE_DELAY_MS = 1700;
+const LOADER_TOTAL_DURATION_MS = 2500;
 
 /**
  * Splash inicial del portfolio.
  * Bloquea scroll temporalmente para asegurar una transición de entrada limpia.
  */
-const Loader = () => {
+function Loader() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [fadeOut, setFadeOut] = useState<boolean>(false);
 
   useEffect(() => {
-    // Bloquear scroll al entrar
+    const previousBodyOverflow = document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
 
-    // 1. Inicia salida a los 1.7s (para terminar a los 2.5s)
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 1700);
+    }, LOADER_FADE_DELAY_MS);
 
-    // 2. Desmonta el componente a los 2.5s
     const removeTimer = setTimeout(() => {
       setIsVisible(false);
-      document.body.style.overflow = "unset";
-    }, 2500);
+      document.body.style.overflow = previousBodyOverflow;
+    }, LOADER_TOTAL_DURATION_MS);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = previousBodyOverflow;
     };
   }, []);
 
@@ -42,6 +44,6 @@ const Loader = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Loader;

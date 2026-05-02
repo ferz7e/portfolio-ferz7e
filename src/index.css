@@ -73,6 +73,15 @@ body {
   font-size: var(--font-sm);
 }
 
+body {
+  line-height: 1.5;
+}
+
+a,
+button {
+  font: inherit;
+}
+
 /* ============================= */
 /* Contenedor raíz (#root)       */
 /* ============================= */
@@ -89,7 +98,7 @@ body {
 /* ============================= */
 /* Main Background           */
 /* ============================= */
-.mainBackground {
+.main-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,7 +121,7 @@ body {
     padding-inline: var(--space-1);
     padding-block: var(--space-2);
   }
-  .mainBackground {
+  .main-background {
     border-radius: 12px;
   }
 }
@@ -126,7 +135,7 @@ body {
     padding-inline: 0px;
     padding-block: var(--space-2);
   }
-  .mainBackground {
+  .main-background {
     border-radius: 8px;
   }
 }

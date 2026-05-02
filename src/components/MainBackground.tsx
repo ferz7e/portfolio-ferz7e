@@ -299,5 +299,5 @@ export default function MainBackground() {
     };
   }, []);
 
-  return <div ref={mountRef} className="mainBackground" />;
+  return <div ref={mountRef} className="main-background" />;
 }

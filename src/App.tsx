@@ -7,6 +7,32 @@ import ProjectModal from "./components/ProjectModal";
 import { projects } from "./data/projects";
 import type { Project } from "./types/project";
 
+interface ProfileLink {
+  href: string;
+  label: string;
+  download?: string;
+}
+
+const profileLinks: ProfileLink[] = [
+  {
+    href: "/software_dev_fernandozarate.pdf",
+    label: "Curriculum",
+    download: "Fernando_Zarate_CV.pdf",
+  },
+  {
+    href: "https://www.linkedin.com/in/ferz7e",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/ferz7e",
+    label: "GitHub",
+  },
+  {
+    href: "mailto:zaratefernandoanibal@gmail.com",
+    label: "Contacto",
+  },
+];
+
 /**
  * Componente raíz de la interfaz pública del portfolio.
  * Gestiona la estructura general y el estado del modal de proyectos.
@@ -19,38 +45,25 @@ function App() {
       <Loader />
 
       <header className="header">
-        <div className="header__navbar">
-          <a href="/software_dev_fernandozarate.pdf" download="Fernando_Zarate_CV.pdf" className="header__navbar--item">
-            Curriculum
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ferz7e"
-            className="header__navbar--item"
-            target="_blank"
-            rel="noopener noreferrer">
-            Linkedin
-          </a>
-          <a
-            href="https://github.com/ferz7e"
-            className="header__navbar--item"
-            target="_blank"
-            rel="noopener noreferrer">
-            Github
-          </a>
-          <a
-            href="mailto:zaratefernandoanibal@gmail.com"
-            className="header__navbar--item"
-            target="_blank"
-            rel="noopener noreferrer">
-            Contacto
-          </a>
-        </div>
+        <nav className="header__navbar" aria-label="Enlaces principales">
+          {profileLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="header__navbar-item"
+              download={link.download}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </header>
 
       <main className="main">
         <MainBackground />
 
-        <div className="main__container--left">
+        <section className="main__container main__container--left" aria-label="Presentacion">
           <div className="hero">
             <h1 className="name">
               <span className="name__initial">F</span>ernando <span className="name__initial">Z</span>árate
@@ -71,13 +84,13 @@ function App() {
               optimizar procesos y aumentar la productividad de los negocios de mis clientes.
             </p>
           </div>
-        </div>
+        </section>
 
-        <div className="main__container--right">
+        <section className="main__container main__container--right" aria-label="Proyectos">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} onOpenModal={setSelectedProject} />
           ))}
-        </div>
+        </section>
       </main>
 
       <ProjectModal

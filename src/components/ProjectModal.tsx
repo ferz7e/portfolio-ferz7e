@@ -16,6 +16,10 @@ function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   useEffect(() => {
     if (!isOpen) return;
 
+    const previousBodyOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
@@ -23,15 +27,28 @@ function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
 
+  const projectId = project.id.replace(/\W+/g, "-").toLowerCase();
+  const titleId = `project-modal-title-${projectId}`;
+  const descriptionId = `project-modal-description-${projectId}`;
+
   return (
-    <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" onClick={onClose}>
+    <div
+      className="project-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={titleId}
+      aria-describedby={descriptionId}
+      onClick={onClose}>
       <div className="project-modal__content" onClick={(event) => event.stopPropagation()}>
-        <button type="button" className="project-modal__close proyect__link" onClick={onClose}>
+        <button type="button" className="project-modal__close project-link" aria-label="Cerrar detalle del proyecto" onClick={onClose}>
           Cerrar
           <span className="project-modal__action-icon" aria-hidden="true">
             <GoX />
@@ -39,12 +56,12 @@ function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
         </button>
 
         <p className="project-modal__id">{project.id}</p>
-        <h3 id="project-modal-title" className="project-modal__title">
+        <h3 id={titleId} className="project-modal__title">
           {project.title}
         </h3>
         <p className="project-modal__subtitle">{project.subtitle}</p>
 
-        <div className="project-modal__description">
+        <div id={descriptionId} className="project-modal__description">
           {project.description.map((paragraph, index) => (
             <p key={`${project.id}-${index}`}>{paragraph}</p>
           ))}
@@ -63,7 +80,7 @@ function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
         <div className="project-modal__stack">
           {project.stack.map((stackItem) => (
-            <span key={`${project.id}-${stackItem}`} className="proyect__stack--item">
+            <span key={`${project.id}-${stackItem}`} className="project-tag">
               {stackItem}
             </span>
           ))}
@@ -71,31 +88,31 @@ function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
         <div className="project-modal__actions">
           {project.websiteUrl ? (
-            <a className="proyect__link" href={project.websiteUrl} target="_blank" rel="noopener noreferrer">
+            <a className="project-link" href={project.websiteUrl} target="_blank" rel="noopener noreferrer">
               Ver proyecto
               <span aria-hidden="true">
                 <GoArrowUpRight />
               </span>
             </a>
           ) : (
-            <a className="proyect__link" href="/">
-              Ver proyecto
+            <span className="project-link project-link--disabled" aria-disabled="true">
+              Demo privada
               <span aria-hidden="true">
                 <GoArrowUpRight />
               </span>
-            </a>
+            </span>
           )}
 
           {project.githubUrl ? (
-            <a className="proyect__link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              Github
+            <a className="project-link" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              GitHub
               <span aria-hidden="true">
                 <GoArrowUpRight />
               </span>
             </a>
           ) : (
-            <span className="proyect__link proyect__link--disabled" aria-disabled="true">
-              Github privado
+            <span className="project-link project-link--disabled" aria-disabled="true">
+              GitHub privado
               <span aria-hidden="true">
                 <GoArrowUpRight />
               </span>
